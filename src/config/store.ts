@@ -1,4 +1,4 @@
-import keplerGlReducer, { enhanceReduxMiddleware } from "@kepler.gl/reducers";
+import keplerGlReducer, { enhanceReduxMiddleware, mapStyleUpdaters } from "@kepler.gl/reducers";
 import {
   applyMiddleware,
   configureStore,
@@ -15,6 +15,10 @@ const reducer = combineReducers({
     uiState: {
       currentModal: null,
     },
+    mapStyle: {
+      ...mapStyleUpdaters.INITIAL_MAP_STYLE,
+      styleType: "voyager"
+    }
   }),
 });
 
